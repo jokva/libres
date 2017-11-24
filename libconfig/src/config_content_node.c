@@ -202,6 +202,7 @@ const char * config_content_node_iget_as_executable( config_content_node_type * 
         path_value = config_path_elm_alloc_abspath( node->cwd , config_value );
 
     config_content_node_push_string( node , path_value );
+    printf( "%s =====> %s\n", config_value, path_value );
     return path_value;
   }
 }
