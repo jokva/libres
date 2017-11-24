@@ -187,8 +187,7 @@ const char * config_content_node_iget_as_relpath( config_content_node_type * nod
 }
 
 const char * config_content_node_iget_as_executable( config_content_node_type * node, int index ) {
-  config_schema_item_assure_type(node->schema, index,
-        CONFIG_PATH + CONFIG_EXISTING_PATH + CONFIG_EXECUTABLE );
+  config_schema_item_assure_type(node->schema, index, CONFIG_EXECUTABLE );
   {
     const char * config_value = config_content_node_iget(node , index);
 
