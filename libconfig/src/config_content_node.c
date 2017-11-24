@@ -193,7 +193,9 @@ const char * config_content_node_iget_as_executable( config_content_node_type * 
     const char * config_value = config_content_node_iget(node , index);
 
     char* path_value = NULL;
-    if( !util_file_exists( config_value ) )
+    if( !strstr( config_value, ERT_UTIL_SEP_STRING )
+     && !strstr( config_value, "/" )
+     && !util_file_exists( config_value ) )
         path_value = util_alloc_PATH_executable( config_value );
 
     if( !path_value )
